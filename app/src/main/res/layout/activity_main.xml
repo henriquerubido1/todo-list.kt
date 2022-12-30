@@ -6,22 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="183dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="random test"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#2196F3"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTodoItems"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/etTodoTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etTodoTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Todo Title"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddTodo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/btnAddTodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add task"
+        app:layout_constraintEnd_toStartOf="@+id/btnDeleteDoneTodos"
+        tools:layout_editor_absoluteY="682dp" />
+
+    <Button
+        android:id="@+id/btnDeleteDoneTodos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete task"
+        tools:layout_editor_absoluteX="276dp"
+        tools:layout_editor_absoluteY="682dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
